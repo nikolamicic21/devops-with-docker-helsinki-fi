@@ -1,0 +1,5 @@
+Add docker-compose file which has one service called punkapi-beer and
+points to mickeckemi21/punkapi-beer image on Docker hub.
+Docker compose file also has entry for build attribute poiting to
+Dockerfile within the same directory. Service punkapi-beer exposes
+port 8080 which is binded to port 8080 of the container.
