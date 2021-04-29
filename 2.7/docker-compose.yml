@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  machine-learning-frontend:
+    image: machine-learning-frontend
+    ports:
+      - 3000:3000
+  machine-learning-backend:
+    image: machine-learning-backend
+    ports:
+      - 5000:5000
+    volumes:
+      - mnt:/src/model
+    depends_on:
+      - machine-learning-training
+  machine-learning-training:
+    image: machine-learning-training
+    volumes:
+      - mnt:/src/model
+      - images:/src/imgs
+      - data:/data
+
+volumes:
+  mnt:
+  images:
+  data:
