@@ -1,0 +1,9 @@
+example-backend docker-compose file
+
+- environment variable REQUEST_ORIGIN to http://localhost:8099
+because backend communicates with frontend via reverse-proxy
+
+example-frontend Dockerfile file
+
+- environment variable REACT_APP_BACKEND_URL to http://localhost:8099/api/
+because frontend communicates with backend via reverse proxy
